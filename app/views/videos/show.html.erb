@@ -1,9 +1,9 @@
 <script type="text/javascript">
 
 function embedPlayer() {
-    var params = { allowScriptAccess: 'always', bgcolor: '#FFFFFF' };
+    var params = { allowScriptAccess: 'always' };
     var atts = { id: 'myytplayer' };
-    swfobject.embedSWF('http://www.youtube.com/apiplayerbeta?enablejsapi=1&amp;playerapiid=ytplayer', 
+    swfobject.embedSWF('http://www.youtube.com/v/<%= @video.semester %>?enablejsapi=1&playerapiid=ytplayer', 
             'ytapiplayer', '500', '375', '8', null, null, params, atts);
 }
 
@@ -44,18 +44,6 @@ function getPercent(all, part) {
 
 </script>
 <div id="ytapiplayer">(Ooops, Flash + JavaScript needed...)</div>
-
-<div id="controls" style="display: none">
-    <div id="buttons">
-        <a href="javascript:ytplayer.pauseVideo()">Pause</a> |
-        <a href="javascript:ytplayer.playVideo()">Play</a> |
-        <a href="javascript:showVolume()">Show volume</a>
-    </div>
-
-    <div id="timebar">
-        <img id="timebarIndicator" src="timebar-indicator.png" alt="|" />
-    </div>
-</div>
 
 
 <p id="notice"><%= notice %></p>
