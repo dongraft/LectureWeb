@@ -94,7 +94,7 @@ function getPercent(all, part) {
 
 <%@video.comments.each do |c|%>
 	<div class="comment">
-		<p>Momento : <input type="button" onclick ="player.seekTo(seconds:<%=c.timestamp%>, allowSeekAhead:true):Void"> Ir al <%=c.timestamp%> segundo</input></p>
+		<p>Momento : <a href="javascript:ytplayer.seekTo('<%=c.timestamp%>', 'true')">Ir al <%=c.timestamp%> segundo</a></p>
 		<p>Comentario : <%=h c.comment%></p>
 	</div>
 <%end%>
