@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(:version => 20101205045318) do
   end
 
   create_table "videos", :force => true do |t|
-    t.string   "user_mail"
+    t.string   "yt_id"
+    t.string   "user_id"
     t.string   "name"
     t.string   "course"
     t.string   "professor"
