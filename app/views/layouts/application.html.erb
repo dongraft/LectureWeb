@@ -20,7 +20,7 @@ function onYouTubePlayerReady(playerId) {
     updateytplayerInfo();
     ytplayer.addEventListener('onStateChange', 'onytplayerStateChange');
     document.getElementById('controls').style.display = 'block';
-	ytplayer.loadVideoById(<%= @video.semester %>,0);
+	ytplayer.loadVideoById('<%= @video.semester %>','0');
 }
 
 function onytplayerStateChange(newState) {
