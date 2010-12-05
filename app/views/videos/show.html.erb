@@ -82,7 +82,8 @@ function getPercent(all, part) {
 
 <%@video.comments.each do |c|%>
 	<div class="comment">
-		Momento : 
+		<p>Momento : <input type="button" onclick ="player.seekTo(seconds:<%=c.timestamp%>, allowSeekAhead:true):Void"> Ir al <%=c.timestamp%> segundo</input></p>
+		<p>Comentario : <%=h c.comment%></p>
 	</div>
 <%end%>
 
