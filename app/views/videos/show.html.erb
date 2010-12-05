@@ -78,6 +78,16 @@ function getPercent(all, part) {
   <%= @video.semester %>
 </p>
 
+<h2>Comentarios : </h2>
+
+<%@video.comments.each do |c|%>
+	<div class="comment">
+		Momento : 
+	</div>
+<%end%>
+
+<%= render :partial => 'comments/form', :locals => {:video => @video }%>
+
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>
