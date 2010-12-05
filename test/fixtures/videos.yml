@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: MyString
+  user_mail: MyString
+  name: MyString
+  course: MyString
+  professor: MyString
+  semester: MyString
+
+two:
+  id: MyString
+  user_mail: MyString
+  name: MyString
+  course: MyString
+  professor: MyString
+  semester: MyString

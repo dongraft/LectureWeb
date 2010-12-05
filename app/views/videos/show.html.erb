@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Id:</b>
+  <%= @video.id %>
+</p>
+
+<p>
+  <b>User mail:</b>
+  <%= @video.user_mail %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @video.name %>
+</p>
+
+<p>
+  <b>Course:</b>
+  <%= @video.course %>
+</p>
+
+<p>
+  <b>Professor:</b>
+  <%= @video.professor %>
+</p>
+
+<p>
+  <b>Semester:</b>
+  <%= @video.semester %>
+</p>
+
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>

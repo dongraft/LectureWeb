@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: MyString
+  video_id: MyString
+  user_mail: MyString
+  timestamp: MyString
+  comment: MyString
+
+two:
+  id: MyString
+  video_id: MyString
+  user_mail: MyString
+  timestamp: MyString
+  comment: MyString
