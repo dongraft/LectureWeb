@@ -1,3 +1,48 @@
+<script type="text/javascript">
+
+function embedPlayer() {
+    var params = { allowScriptAccess: 'always', bgcolor: '#FFFFFF' };
+    var atts = { id: 'myytplayer' };
+    swfobject.embedSWF('http://www.youtube.com/apiplayerbeta?enablejsapi=1&amp;playerapiid=ytplayer', 
+            'ytapiplayer', '500', '375', '8', null, null, params, atts);
+}
+
+function onYouTubePlayerReady(playerId) {
+    ytplayer = document.getElementById('myytplayer');
+    setInterval(updateytplayerInfo, 250);
+    updateytplayerInfo();
+    ytplayer.addEventListener('onStateChange', 'onytplayerStateChange');
+    document.getElementById('controls').style.display = 'block';
+	ytplayer.loadVideoById('<%= @video.semester %>','0');
+}
+
+function onytplayerStateChange(newState) {
+     setytplayerState(newState);
+}
+
+function showVolume() {
+    alert( ytplayer.getVolume() );
+}
+
+function updateytplayerInfo() {
+    if (ytplayer) {
+        updateTimebar();
+    }
+}
+
+function updateTimebar() {
+    var all = ytplayer.getDuration();
+    var part = ytplayer.getCurrentTime();
+    var percent = getPercent(all, part);
+    var timebarWidth = 450;
+    document.getElementById('timebarIndicator').style.left = percent * (timebarWidth / 100) + "px";
+}
+
+function getPercent(all, part) {
+   return (all > 0) ? (100 / all) * part : 0;
+}
+
+</script>
 <div id="ytapiplayer">(Ooops, Flash + JavaScript needed...)</div>
 
 <div id="controls" style="display: none">
