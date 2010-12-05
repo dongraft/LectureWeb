@@ -4,16 +4,19 @@ function embedPlayer() {
     var params = { allowScriptAccess: 'always' };
     var atts = { id: 'myytplayer' };
     swfobject.embedSWF('http://www.youtube.com/v/<%= @video.semester %>?enablejsapi=1&playerapiid=ytplayer', 
-            'ytapiplayer', '500', '375', '8', null, null, params, atts);
+            'ytapiplayer', '809', '480', '8', null, null, params, atts);
 }
 
 function onYouTubePlayerReady(playerId) {
     ytplayer = document.getElementById('myytplayer');
-    setInterval(updateytplayerInfo, 250);
-    updateytplayerInfo();
+    //setInterval(updateytplayerInfo, 250);
+    //updateytplayerInfo();
     ytplayer.addEventListener('onStateChange', 'onytplayerStateChange');
     document.getElementById('controls').style.display = 'block';
-	ytplayer.loadVideoById('<%= @video.semester %>','0');
+	ytplayer.setPlaybackQuality('large');
+	ytplayer.playVideo();
+	
+	//ytplayer.loadVideoById('<%= @video.semester %>','0');
 }
 
 function onytplayerStateChange(newState) {
@@ -43,8 +46,15 @@ function getPercent(all, part) {
 }
 
 </script>
-<div id="ytapiplayer">(Ooops, Flash + JavaScript needed...)</div>
+<div id="ytapiplayer" style="display: none">(Ooops, Flash + JavaScript needed...)</div>
 
+<div id="controls" style="display: none">
+    <div id="buttons">
+    </div>
+
+    <div id="timebar">
+    </div>
+</div>
 
 <p id="notice"><%= notice %></p>
 
