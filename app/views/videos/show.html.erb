@@ -4,7 +4,7 @@ function embedPlayer() {
     var params = { allowScriptAccess: 'always' };
     var atts = { id: 'myytplayer' };
     swfobject.embedSWF('http://www.youtube.com/v/<%= @video.yt_id %>?enablejsapi=1&playerapiid=ytplayer', 
-            'ytapiplayer', '809', '480', '8', null, null, params, atts);
+            'ytapiplayer', '809', '482', '8', null, null, params, atts);
 }
 
 function onYouTubePlayerReady(playerId) {
