@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Id</th>
+    <th>Youtube ID</th>
     <th>User mail</th>
     <th>Name</th>
     <th>Course</th>
@@ -16,6 +17,7 @@
 <% @videos.each do |video| %>
   <tr>
     <td><%= video.id %></td>
+    <td><%= video.yt_id %></td>
     <td><%= video.user_mail %></td>
     <td><%= video.name %></td>
     <td><%= video.course %></td>
