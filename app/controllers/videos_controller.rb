@@ -15,10 +15,8 @@ class VideosController < ApplicationController
   # GET /videos/1.xml
   def show
     @video = Video.find(params[:id])
-    @user = User.find_by_id(1) #current_user
+    @user = current_user
     @comment = Comment.new
-    @comment.user = User.find(1) #current_user <----- importante cambiar una vez instalado el sistema de usuarios
-    @comment.video = @video
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,6 +44,7 @@ class VideosController < ApplicationController
   # POST /videos.xml
   def create
     @video = Video.new(params[:video])
+    @video.user = current_user
 
     respond_to do |format|
       if @video.save

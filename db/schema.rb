@@ -13,17 +13,16 @@
 ActiveRecord::Schema.define(:version => 20101205045318) do
 
   create_table "comments", :force => true do |t|
-    t.string   "video_id"
-    t.string   "user_mail"
+    t.integer  "video_id"
+    t.integer  "user_id"
     t.string   "timestamp"
-    t.string   "comment"
+    t.text     "comment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.string   "pass"
     t.string   "name"
     t.string   "last_name"
     t.string   "crypted_password",    :null => false
@@ -37,16 +36,11 @@ ActiveRecord::Schema.define(:version => 20101205045318) do
 
   create_table "videos", :force => true do |t|
     t.string   "yt_id"
-    t.string   "user_id"
+    t.integer  "user_id"
     t.string   "name"
     t.string   "course"
     t.string   "professor"
     t.string   "semester"
-    t.string   "crypted_password",    :null => false
-    t.string   "password_salt",       :null => false
-    t.string   "persistence_token",   :null => false
-    t.string   "single_access_token", :null => false
-    t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

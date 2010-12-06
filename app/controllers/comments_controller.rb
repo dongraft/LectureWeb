@@ -42,14 +42,15 @@ class CommentsController < ApplicationController
   # POST /comments.xml
   def create
     @comment = Comment.new(params[:comment])
-    video = Video.find(params[:video_id])
-    @comment.video = video
-
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to(video, :notice => 'Comment was successfully created.') }
-        format.xml  { render :xml => video, :status => :created, :location => video }
-      end
+    @video = Video.find(params[:video_id])
+    @comment.video = @video
+    
+    if @comment.save
+      respond_to do |format|
+    	format.js{ render :update do |page|
+      		page.replace_html "comments", :partial => "comments", :object => @video
+    	end}
+  end
     end
   end
 
