@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
-has_many :videos
+	acts_as_authentic
+
+	has_many :videos
 
 end

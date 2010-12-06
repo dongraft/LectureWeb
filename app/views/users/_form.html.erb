@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :mail %><br />
-    <%= f.text_field :mail %>
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
   </div>
   <div class="field">
-    <%= f.label :pass %><br />
-    <%= f.text_field :pass %>
+    <%= f.label :password, f.object.new_record? ? nil : "Cambiar contraseña" %><br />
+    <%= f.password_field :password %><br />
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation %><br />
   </div>
   <div class="field">
     <%= f.label :name %><br />

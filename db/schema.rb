@@ -22,10 +22,15 @@ ActiveRecord::Schema.define(:version => 20101205045318) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "mail"
+    t.string   "email"
     t.string   "pass"
     t.string   "name"
     t.string   "last_name"
+    t.string   "crypted_password",    :null => false
+    t.string   "password_salt",       :null => false
+    t.string   "persistence_token",   :null => false
+    t.string   "single_access_token", :null => false
+    t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -37,6 +42,11 @@ ActiveRecord::Schema.define(:version => 20101205045318) do
     t.string   "course"
     t.string   "professor"
     t.string   "semester"
+    t.string   "crypted_password",    :null => false
+    t.string   "password_salt",       :null => false
+    t.string   "persistence_token",   :null => false
+    t.string   "single_access_token", :null => false
+    t.string   "last_login_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

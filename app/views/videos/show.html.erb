@@ -82,12 +82,14 @@ function getPercent(all, part) {
 
 <h2>Comentarios : </h2>
 
+<div id="comments">
 <%@video.comments.each do |c|%>
 	<div class="comment">
 		<p>Momento : <a href="javascript:ytplayer.seekTo('<%=c.timestamp%>', 'false')">Ir al <%=c.timestamp%> segundo</a></p>
 		<p>Comentario : <%=h c.comment%></p>
 	</div>
 <%end%>
+</div>
 
 <%= render :partial => 'comments/form', :locals => {:video => @video }%>
 

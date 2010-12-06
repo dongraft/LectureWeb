@@ -1,4 +1,5 @@
 class VideosController < ApplicationController
+  before_filter :require_user
   # GET /videos
   # GET /videos.xml
   def index

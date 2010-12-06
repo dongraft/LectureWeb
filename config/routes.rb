@@ -5,6 +5,11 @@ LectureWeb::Application.routes.draw do
   	resources :comments
   end
   
+  resources :user_sessions
+  
+  root :controller => "user_sessions", :action => "new"
+  match 'logout' => "user_sessions#destroy", :as => :logout
+  
   
 
   # The priority is based upon order of creation:
