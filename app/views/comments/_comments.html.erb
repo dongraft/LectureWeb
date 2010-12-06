@@ -1,0 +1,8 @@
+
+<%@video.comments.each do |c|%>
+	<div class="comment">
+		<p><%= @video.user.name%> <%= @video.user.last_name%> comentó sobre <a href="javascript:ytplayer.seekTo('<%=c.timestamp%>', 'false')">el segundo <%=c.timestamp%></a> del video lo siguiente :</p>
+		<p><%=h c.comment%></p>
+	</div>
+<%end%>
+
