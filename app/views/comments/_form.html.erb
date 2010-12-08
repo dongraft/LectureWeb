@@ -1,5 +1,11 @@
+<script type="text/javascript">
+  function setTimestamp(){
+    $('comment_timestamp').value = parseInt(ytplayer.getCurrentTime());
+    return true;
+  }
+</script>
 
-<%= form_for [@video, @comment], :remote => true do |f| %>
+<%= form_for [@video, @comment], :remote => true, :html => {:onsubmit => "setTimestamp();"} do |f| %>
   <% if @comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -11,10 +17,8 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.label :timestamp %><br />
-    <%= f.text_field :timestamp %>
-  </div>
+    <%# f.label :timestamp %><br />
+    <%= f.hidden_field :timestamp %>
   <div class="field">
     <%= f.label :comment %><br />
     <%= f.text_area :comment %>

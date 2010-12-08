@@ -7,7 +7,8 @@ LectureWeb::Application.routes.draw do
   
   resources :user_sessions
   
-  root :controller => "user_sessions", :action => "new"
+  root :controller => "videos", :action => "index"
+  #root :controller => "user_sessions", :action => "new"
   match 'logout' => "user_sessions#destroy", :as => :logout
   
   
