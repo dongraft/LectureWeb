@@ -1,8 +1,9 @@
 
 <%@video.comments.each do |c|%>
 	<div class="comment">
-		Comentario de el segundo <a href="javascript:ytplayer.seekTo('<%=c.timestamp%>', 'false')"><%=c.timestamp%></a> :</p>
+		Comentario en en el segundo <a href="javascript:ytplayer.seekTo('<%=c.timestamp%>', 'false')"><%=c.timestamp%></a> :</p>
 		<p><%=h c.comment%></p>
+		<br />
 	</div>
 <%end%>
 

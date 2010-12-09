@@ -1,9 +1,9 @@
 <script type="text/javascript">
 
 function embedPlayer() {
-    var params = { allowScriptAccess: 'always' };
+    var params = { allowScriptAccess: 'always', wmode: 'opaque', allowFullScreen: 'true'};
     var atts = { id: 'myytplayer' };
-    swfobject.embedSWF('http://www.youtube.com/v/<%= @video.yt_id %>?enablejsapi=1&playerapiid=ytplayer', 
+    swfobject.embedSWF('http://www.youtube.com/v/<%= @video.yt_id %>?enablejsapi=1&version=3&playerapiid=ytplayer', 
             'ytapiplayer', '809', '482', '8', null, null, params, atts);
 }
 
@@ -59,25 +59,20 @@ function getPercent(all, part) {
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
-  <%= @video.name %>
+  <b><%= @video.course %> - <%= @video.name %></b>
 </p>
 
 <p>
-  <b>Course:</b>
-  <%= @video.course %>
-</p>
-
-<p>
-  <b>Professor:</b>
+  <b>Profesor:</b>
   <%= @video.professor %>
 </p>
 
 <p>
-  <b>Semester:</b>
+  <b>Semestre:</b>
   <%= @video.semester %>
 </p>
-
+<br />
+<br />
 <h2>Comentarios : </h2>
 
 <div id="comments">

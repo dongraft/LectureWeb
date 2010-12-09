@@ -1,5 +1,5 @@
 LectureWeb::Application.routes.draw do
-  resources :users
+#  resources :users
 
   resources :videos do
   	resources :comments
