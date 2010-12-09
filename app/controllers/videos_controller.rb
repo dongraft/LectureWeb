@@ -1,5 +1,4 @@
 class VideosController < ApplicationController
-  before_filter :require_user
   # GET /videos
   # GET /videos.xml
   def index
@@ -15,7 +14,6 @@ class VideosController < ApplicationController
   # GET /videos/1.xml
   def show
     @video = Video.find(params[:id])
-    @user = current_user
     @comment = Comment.new
 
     respond_to do |format|
@@ -44,7 +42,6 @@ class VideosController < ApplicationController
   # POST /videos.xml
   def create
     @video = Video.new(params[:video])
-    @video.user = current_user
 
     respond_to do |format|
       if @video.save

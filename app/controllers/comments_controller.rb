@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  before_filter :require_user
   # GET /comments
   # GET /comments.xml
   def index

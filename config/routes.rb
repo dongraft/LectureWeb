@@ -5,12 +5,7 @@ LectureWeb::Application.routes.draw do
   	resources :comments
   end
   
-  resources :user_sessions
-  
-  root :controller => "videos", :action => "index"
-  #root :controller => "user_sessions", :action => "new"
-  match 'logout' => "user_sessions#destroy", :as => :logout
-  
+  root :to => "videos#index"
   
 
   # The priority is based upon order of creation:
